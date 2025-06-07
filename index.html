@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CANDY GARAGE AUTOMOTIVES - Home</title>
+  <!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      /* Using a slightly different background image for variety */
+      background: url('https://s1.cdn.autoevolution.com/images/news/gallery/the-final-score-custom-lowrider-a-divisive-piece-of-rolling-art_1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      font-family: 'Open Sans', sans-serif; /* Applied Open Sans to body */
+      line-height: 1.6;
+    }
+
+    header {
+      /* Stronger gradient for better text readability on top of image */
+      background-image:
+        linear-gradient(rgba(15, 32, 39, 0.8), rgba(44, 83, 100, 0.8)),
+        url('https://i.ytimg.com/vi/YnUOJ0yi188/maxresdefault.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: rgb(173, 3, 3);
+      padding: 3rem 2rem; /* Increased padding */
+      text-align: center;
+      position: relative; /* Needed for logo positioning if desired later */
+    }
+
+    header h1 {
+      font-family: 'Bebas Neue', sans-serif; /* Applied Bebas Neue */
+      font-size: 4.5rem; /* Significantly increased size */
+      margin: 0;
+      letter-spacing: 3px; /* Added letter spacing for flair */
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.4); /* Enhanced text shadow */
+    }
+
+    header p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.5rem; /* Increased size */
+      font-weight: 300; /* Lighter weight for sub-text */
+      margin-top: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Logo Styling */
+    .logo-img {
+      max-width: 180px; /* Adjust size as needed */
+      height: auto;
+      margin: 1.5rem auto 0.5rem auto; /* Space above and below logo */
+      display: block; /* Ensures it takes its own line and can be centered */
+      border-radius: 10px; /* Slightly rounded corners for the logo */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    }
+
+    nav {
+      background-color: #2c3e50; /* Slightly darker navigation bar */
+      display: flex;
+      justify-content: center;
+      gap: 3rem; /* Increased gap between nav items */
+      padding: 1.2rem; /* Increased padding */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow for nav bar */
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600; /* Bolder font weight */
+      font-size: 1.1rem; /* Slightly larger font */
+      transition: color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #f1c40f; /* Vibrant yellow for hover */
+      transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    main {
+      min-height: 70vh;
+    }
+
+    /* Welcome section */
+    section.welcome {
+      padding: 2.5rem; /* Increased padding */
+      background: rgb(211, 121, 4);
+      margin: 2.5rem auto; /* Increased margin */
+      border-radius: 18px; /* More rounded corners */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Stronger shadow */
+      max-width: 700px; /* Wider welcome section */
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    section.welcome:hover {
+        transform: translateY(-5px);
+    }
+
+    section.welcome h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem; /* Increased size */
+      margin-bottom: 1rem;
+      color: #2c3e50;
+      letter-spacing: 1px;
+    }
+
+    section.welcome p {
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    /* Categories section */
+    .categories {
+      padding: 2.5rem;
+      margin: 2.5rem auto;
+      max-width: 1100px; /* Wider categories section */
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      background: #ad590a;
+    }
+
+    .categories h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      text-align: center;
+      margin-bottom: 2rem; /* More space below heading */
+      font-size: 3rem; /* Increased size */
+      color: #2c3e50;
+      letter-spacing: 1px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Slightly larger min-width */
+      gap: 2rem; /* Increased gap */
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 15px; /* More rounded */
+      padding: 20px; /* Increased padding */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Stronger initial shadow */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      overflow: hidden; /* Ensures rounded corners apply to image */
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px); /* More pronounced lift */
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2); /* Stronger shadow on hover */
+    }
+
+    .category-img {
+      width: 100%;
+      height: 180px; /* Increased image height */
+      object-fit: cover;
+      border-radius: 12px; /* Rounded image corners */
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover .category-img {
+        transform: scale(1.05); /* Slight zoom on image hover */
+    }
+
+    .category-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem; /* Increased size */
+      color: #2c3e50;
+      margin: 10px 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .view-models-btn {
+      margin-top: 15px; /* More space above button */
+      padding: 0.8rem 1.5rem; /* Larger button padding */
+      background-color: #34495e;
+      color: rgb(210, 241, 241);
+      border: none;
+      border-radius: 8px; /* More rounded button */
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      width: 90%; /* Wider button */
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .view-models-btn:hover {
+      background-color: #f1c40f;
+      color: #34495e; /* Text color changes on hover */
+      transform: translateY(-3px); /* Button lifts on hover */
+      box-shadow: 0 6px 12px rgba(241,196,15,0.4); /* Yellow shadow on hover */
+    }
+
+    /* Cars section */
+    .cars-section {
+      padding: 2.5rem;
+      margin: 2.5rem auto;
+      max-width: 1200px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      background: #c05701;
+    }
+
+    .back-to-categories {
+      margin-bottom: 1.5rem; /* More space below button */
+      padding: 0.7rem 1.4rem;
+      background-color: #34495e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-weight: 600;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    .back-to-categories:hover {
+      background-color: #f1c40f;
+      color: #34495e;
+      transform: translateX(-5px); /* Slide left on hover */
+    }
+
+    .cars-section h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem; /* Slightly smaller than main categories, but still large */
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+      letter-spacing: 1px;
+    }
+
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger min-width for car cards */
+      gap: 2rem;
+    }
+
+    .car-card {
+      background: rgb(223, 236, 236);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .car-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    .car-img {
+      width: 100%;
+      height: 180px; /* Consistent image height */
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .car-card:hover .car-img {
+        transform: scale(1.05);
+    }
+
+    .car-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: #2c3e50;
+      margin: 5px 0 10px 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .car-card p {
+        font-size: 0.95rem;
+        color: #666;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .car-price {
+      font-weight: 700; /* Bolder price */
+      color: #e74c3c; /* Red color for price */
+      font-size: 1.3rem; /* Larger price font */
+      margin: 10px 0;
+    }
+
+    .car-quantity {
+      display: flex;
+      align-items: center;
+      margin: 15px 0; /* More margin */
+      gap: 10px; /* Gap between label and input */
+    }
+
+    .car-quantity label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .car-quantity input {
+      width: 60px; /* Wider input */
+      padding: 8px; /* More padding */
+      text-align: center;
+      border: 1px solid #b16e09;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .add-to-cart-btn {
+      margin-top: 15px;
+      padding: 0.8rem 1.5rem;
+      background-color: #34495e;
+      color: rgb(173, 87, 7);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      width: 90%;
+      font-weight: 600;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: #27ae60; /* Green for add to cart */
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(39,174,96,0.4);
+    }
+
+    /* Cart table */
+    table {
+      width: 100%;
+      border-collapse: separate; /* Changed to separate for rounded borders */
+      border-spacing: 0 10px; /* Space between rows */
+      color: #fcfcfcf6;
+      background-color: rgb(141, 69, 3);
+      border-radius: 15px; /* Rounded table */
+      overflow: hidden; /* Ensures rounded corners are visible */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    table th, table td {
+      padding: 12px; /* More padding */
+      border-bottom: 1px solid #eee; /* Lighter border */
+      text-align: center;
+    }
+
+    table th {
+      background-color: #34495e;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    
+    table tbody tr:last-child td {
+        border-bottom: none; /* No border on last row */
+    }
+
+    table button {
+      background-color: #e74c3c;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 8px 15px; /* More padding */
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-weight: 600;
+    }
+
+    table button:hover {
+      background-color: #ebf5f4;
+      transform: scale(1.05);
+    }
+
+    .cart-total {
+      text-align: right;
+      font-size: 1.4rem; /* Larger total price */
+      font-weight: bold;
+      margin-top: 1.5rem;
+      color: #2c3e50;
+      padding-right: 10px; /* Align with table content */
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem; /* Increased padding */
+      background-color: #2c3e50;
+      color: rgb(8, 216, 36);
+      margin-top: 2.5rem; /* More margin from main content */
+      font-size: 0.95rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Fullscreen Overlay */
+    #fullscreen-container {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out; /* Indicate it's clickable to close */
+    }
+
+    #fullscreen-img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px; /* More rounded image */
+      box-shadow: 0 0 30px rgba(255,255,255,0.7); /* Stronger glow */
+      transition: transform 0.3s ease;
+    }
+
+    #fullscreen-img:hover {
+        transform: scale(1.01); /* Slight zoom on hover when in fullscreen */
+    }
+
+    /* Contact Us Section Styling */
+    .contact-us-section {
+      padding: 2.5rem;
+      margin: 2.5rem auto;
+      max-width: 800px; /* Adjust width as needed */
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      background: #ad590a; /* Consistent background */
+      color: #fcfcfcf6;
+    }
+
+    .contact-us-section h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 3rem;
+      color: #2c3e50; /* Changed to match other headings */
+      letter-spacing: 1px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for form */
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #333;
+      background-color: #fdfdfd;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #f1c40f;
+      outline: none;
+      box-shadow: 0 0 5px rgba(241,196,15,0.5);
+    }
+
+    .form-group textarea {
+      resize: vertical; /* Allow vertical resizing */
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      padding: 0.8rem 1.5rem;
+      background-color: #27ae60; /* Green submit button */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 700;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      align-self: center; /* Center the button */
+      width: 50%; /* Make button narrower */
+      max-width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .submit-btn:hover {
+      background-color: #2ecc71;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(46,204,113,0.4);
+    }
+
+    .contact-info-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0; /* No spacing between cells */
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-top: 2rem;
+    }
+
+    .contact-info-table th,
+    .contact-info-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        color: #333;
+    }
+
+    .contact-info-table th {
+        background-color: #34495e;
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .contact-info-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 3rem;
+        }
+        header p {
+            font-size: 1.2rem;
+        }
+        section.welcome h2, .categories h3, .cars-section h3, .contact-us-section h3 { /* Added contact us heading */
+            font-size: 2.5rem;
+        }
+        nav {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        nav a {
+            font-size: 1rem;
+        }
+        .category-grid, .cars-grid {
+            grid-template-columns: 1fr; /* Single column on small screens */
+        }
+        .category-card, .car-card {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .submit-btn {
+            width: 80%; /* Wider button on small screens */
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CANDY GARAGE AUTOMOTIVES</h1>
+    <p>Your trusted customized car marketplace</p>
+    <!-- Logo Placeholder -->
+    <img src="https://cdn1.designhill.com/uploads/personal_designs/thumbs/9794a00086b5b4952765cfb9b2e14981-6462dc64d9272f4166d1e7b7a61c510116541218391205.jpg?ver=2.12.85" alt="Candy Garage Logo" class="logo-img">
+  </header>
+
+  <nav>
+    <a href="#" id="nav-home">HOME</a>
+    <a href="#" id="nav-rides">RIDES</a>
+    <a href="#" id="nav-cart">CART</a>
+    <a href="#" id="nav-contact">CONTACT US</a> <!-- New Navigation Link -->
+  </nav>
+
+  <main id="main-content">
+    <!-- The original homepage content here, will be dynamically replaced -->
+    <section class="welcome">
+      <h2>Welcome to CANDY GARAGE!</h2>
+      <p>Explore our exquisite collection of customized vehicles and find the perfect ride for your style.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CANDY GARAGE AUTOMOTIVES. BEST RIDES OF ALL TIME.</p>
+  </footer>
+
+  <!-- Fullscreen Overlay -->
+  <div id="fullscreen-container" onclick="hideFullscreen()">
+    <img id="fullscreen-img" src="" alt="Full size car image"/>
+  </div>
+
+  <script>
+    // Fullscreen functions
+    function showFullscreen(src) {
+      const overlay = document.getElementById("fullscreen-container");
+      const img = document.getElementById("fullscreen-img");
+      img.src = src;
+      overlay.style.display = "flex";
+    }
+    function hideFullscreen() {
+      document.getElementById("fullscreen-container").style.display = "none";
+    }
+
+    // Main application
+    const mainContent = document.getElementById('main-content');
+    const navHome = document.getElementById('nav-home');
+    const navRides = document.getElementById('nav-rides');
+    const navCart = document.getElementById('nav-cart');
+    const navContact = document.getElementById('nav-contact'); // New nav element
+
+    let cart = [];
+    let currentCategory = null;
+
+    // Data for car categories - Using updated image URLs from your prompt
+    const categories = [
+      { id: 1, name: "SPORT CARS", img: "https://png.pngtree.com/thumb_back/fh260/background/20230703/pngtree-advanced-racing-tuning-of-green-sports-car-coupe-with-custom-extensions-image_3707466.jpg" },
+      { id: 2, name: "OFF ROAD", img: "https://img.freepik.com/free-photo/off-road-car-fantasy-scenario_23-2151437503.jpg" },
+      { id: 3, name: "MINI VANS", img: "https://s1.cdn.autoevolution.com/images/news/sad-custom-japan-stinger-200hiace-is-a-lamborghini-styled-minivan-photo-gallery-98964_1.jpg" },
+      { id: 4, name: "MINI BUSES", img: "https://i.pinimg.com/736x/91/73/70/91737063c77c98cdbc10b012e3d4deee.jpg" },
+      { id: 5, name: "SUV'S", img: "https://cdn.shopify.com/s/files/1/0720/8406/2487/files/How_Much_Does_It_Cost_To_Wrap_A_SUV_5.jpg?v=1704804409" },
+      { id: 6, name: "BIKES", img: "https://media.istockphoto.com/id/996760770/photo/modern-black-motorcycle.jpg?s=612x612&w=0&k=20&c=KbGXLdxesglkm3qamT40v-mHujzcQIkHPOImtBcV0TM=" }
+    ];
+
+    // Data for cars (updated to 4 cars per category)
+    const cars = {
+      "SPORT CARS": [
+        { id: 101, name: "PORSCHE 911", price: 190000, img: "https://cdn.dealeraccelerate.com/bagauction/12/1905/101816/1920x1440/2023-porsche-911-gt3-rs-weissach", desc: "price" },
+        { id: 102, name: "SUPRA", price: 250000, img: "https://s7d9.scene7.com/is/image/wheelpros/rotiform-usf-candy%20pink-19x10.5-19x11-2019%20toyota%20supra%201?$2200x1500$&aemtype=gdp", desc: "price" },
+        { id: 103, name: "GOLF GTI", price: 220000, img: "https://i.pinimg.com/564x/4c/b9/c0/4cb9c076a569e0195d5a799e3f7fbca1.jpg", desc: "price" },
+        { id: 104, name: "AUDI R8", price: 195000, img: "https://cdn.shopify.com/s/files/1/0720/8406/2487/files/Audi_R8_Wrap_For_You_8.jpg?v=1717765866", desc: "price" }
+      ],
+      "OFF ROAD": [
+        { id: 201, name: "Jeep Wrangler", price: 45000, img: "https://d1ducb2okbhmxx.cloudfront.net/catalog/product/cache/54b31fb065306593c364f8dcec4420b3/2/0/2019-custom-jeep-wrangler-rubicon-unlimited-jl-jlu-punkn-orange-6-4-hemi-conversion-passenger-front-1.webp", desc: "price" },
+        { id: 202, name: "Land Rover Defender", price: 65000, img: "https://www.arkonik.com/assets/media/2588-kraken-thumb-400x310r.jpg", desc: "price" },
+        { id: 203, name: "Toyota Fj Cruiser", price: 85000, img: "https://picture1.goo-net.com/7000510716/30241216/J/70005107163024121600100.jpg", desc: "price" },
+        { id: 204, name: "Mercedes G-Class", price: 140000, img: "https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2019/08/kylies-g-class.jpg", desc: "price" }
+      ],
+      "MINI VANS": [
+        { id: 301, name: "Honda Odyssey", price: 40000, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ3jPoH-ojYyFZ8KdFfz0WrxKDKVi8cUZJhA&s", desc: "price" },
+        { id: 302, name: "Toyota hiace", price: 42000, img: "https://i.pinimg.com/736x/7f/ce/c3/7fcec3d3c1ad755e82f5b359166863a5.jpg", desc: "price" },
+        { id: 303, name: "Nissan NV350", price: 38000, img: "https://upload.wikimedia.org/wikipedia/commons/f/fa/NISSAN_NV350_CARAVAN_Rider_01.JPG", desc: "price" },
+        { id: 304, name: "ISUZU BLIND VAN", price: 35000, img: "https://i.ytimg.com/vi/sOHqRQOcgCA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCF9hzSaIv3SzOz0yrP1b2ygjeG1A", desc: "price" }
+      ],
+      "MINI BUSES": [
+        { id: 401, name: "ISUZU N-SERIES", price: 69000, img: "data:image/jpeg;base64,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", desc: "price" },
+        { id: 402, name: "MISTRUBISHI FUSO", price: 71000, img: "https://i.ytimg.com/vi/_GpaU-pN8aY/maxresdefault.jpg", desc: "price" },
+        { id: 403, name: "SCANIA R-SERIES", price: 77000, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkgINv6slKfq8bPXb3IEFy2SC4XnadZOQ1VQ&shttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkgINv6slKfq8bPXb3IEFy2SC4XnadZOQ1VQ&s", desc: "price" },
+        { id: 404, name: "MAN TGX", price: 63000, img: "https://static.ntvkenya.co.ke/uploads/2024/12/Matrix-1080x740.jpg", desc: "price" }
+      ],
+      "SUV'S": [
+        { id: 501, name: "2023 Range Rover", price: 105000, img: "https://cdn.motor1.com/images/mgl/0ZxX3/s1/range-rover.jpg", desc: "The ultimate luxury SUV" },
+        { id: 502, name: "2023 BMW X7", price: 85000, img: "https://cdn.motor1.com/images/mgl/0ZxX3/s1/bmw-x7.jpg", desc: "Spacious luxury with sporty handling" },
+        { id: 503, name: "2023 Mercedes GLS", price: 95000, img: "https://cdn.motor1.com/images/mgl/0ZxX3/s1/mercedes-benz-gls.jpg", desc: "First-class comfort for the whole family" },
+        { id: 504, name: "2023 Cadillac Escalade", price: 90000, img: "https://cdn.motor1.com/images/mgl/90J6L/s1/2023-cadillac-escalade.jpg", desc: "American luxury with bold presence" } 
+      ],
+      "BIKES": [
+        { id: 601, name: "Harley-Davidson", price: 20000, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJTwgXhMtH5kahkVGYcu8AnerKHfQGuhqCPA&s", desc: "price" },
+        { id: 602, name: "Kawasaki Ninja 400", price: 15500, img: "https://mtcfairings.com/image/cache/catalog/Ninja400peitu1-550x550w.jpg", desc: "price" },
+        { id: 603, name: "BMW R 1250 GS", price: 18000, img: "https://s1.cdn.autoevolution.com/images/news/gallery/custom-bmw-r-1250-r-hulk-looks-wrathful-will-make-loki-tremble-with-fear_6.jpg", desc: "price" },
+        { id: 604, name: "Ducati Panigale V4", price: 25000, img: "https://i0.wp.com/www.bike-urious.com/wp-content/uploads/Motorcorsas-Nicky-Hayden-Tribute-for-Charity-2019-Ducati-Panigale-V4-Custom-Right-Side.jpg?fit=968%2C643&ssl=1", desc: "price" }
+      ]
+    };
+
+    function renderHome() {
+      mainContent.innerHTML = `
+        <section class="welcome">
+          <h2>Welcome to CANDY GARAGE!</h2>
+          <p>Explore our exquisite collection of customized vehicles and find the perfect ride for your style.</p>
+        </section>
+      `;
+    }
+
+    function renderCategories() {
+      let html = `
+      <section class="categories">
+        <h3>Vehicle Categories</h3>
+        <div class="category-grid">
+      `;
+      
+      categories.forEach(category => {
+        html += `
+          <div class="category-card">
+            <img src="${category.img}" alt="${category.name}" class="category-img" />
+            <h4 class="category-title">${category.name}</h4>
+            <button class="view-models-btn" onclick="showCategory('${category.name}')">View Models</button>
+          </div>
+        `;
+      });
+      
+      html += `
+        </div>
+      </section>
+      `;
+      mainContent.innerHTML = html;
+    }
+
+    // Function to display cars for a selected category
+    function showCategory(categoryName) {
+      currentCategory = categoryName;
+      // Ensure we only get the first 4 cars for display
+      const categoryCars = cars[categoryName] ? cars[categoryName].slice(0, 4) : [];
+      
+      let html = `
+      <section class="cars-section">
+        <button class="back-to-categories" onclick="renderCategories()">← Back to Categories</button>
+        <h3>${categoryName} Models</h3>
+        <div class="cars-grid">
+      `;
+      
+      if (categoryCars.length === 0) {
+        html += `<p style="text-align: center; grid-column: 1 / -1;">No models available for this category yet.</p>`;
+      } else {
+        categoryCars.forEach(car => {
+          html += `
+            <div class="car-card">
+              <img src="${car.img}" alt="${car.name}" class="car-img" onerror="this.onerror=null;this.src='https://placehold.co/160x160/cccccc/333333?text=Image+Not+Found';" onclick="showFullscreen('${car.img}')" />
+              <h4 class="car-title">${car.name}</h4>
+              <p>${car.desc}</p>
+              <p class="car-price">$${car.price.toLocaleString()}</p>
+              <div class="car-quantity">
+                <label>Quantity:</label>
+                <input type="number" min="1" value="1" id="qty-${car.id}" />
+              </div>
+              <button class="add-to-cart-btn" onclick="addToCart(${car.id})">Add to Cart</button>
+            </div>
+          `;
+        });
+      }
+      
+      html += `
+        </div>
+      </section>
+      `;
+      
+      mainContent.innerHTML = html;
+    }
+
+    function renderCart() {
+      if (cart.length === 0) {
+        mainContent.innerHTML = `
+          <section style="padding: 2rem; text-align: center;">
+            <h3>Your Cart is Empty</h3>
+            <p>Add some cars from the RIDES page.</p>
+          </section>
+        `;
+        return;
+      }
+
+      let html = `
+        <section style="padding: 2rem; max-width: 900px; margin: 0 auto;">
+          <h3>Your Shopping Cart</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Car</th>
+                <th>Quantity</th>
+                <th>Price Each</th>
+                <th>Total Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+
+      let totalCartPrice = 0;
+      
+      // Find all cars in cart across all categories
+      cart.forEach(item => {
+        let car = null;
+        for (const category in cars) {
+          const foundCar = cars[category].find(c => c.id === item.carId);
+          if (foundCar) {
+            car = foundCar;
+            break;
+          }
+        }
+        
+        if (!car) return; // Skip if car not found (shouldn't happen with correct IDs)
+
+        const itemTotal = car.price * item.quantity;
+        totalCartPrice += itemTotal;
+
+        html += `
+          <tr>
+            <td>${car.name}</td>
+            <td>${item.quantity}</td>
+            <td>$${car.price.toLocaleString()}</td>
+            <td>$${itemTotal.toLocaleString()}</td>
+            <td><button onclick="removeFromCart(${car.id})">Remove</button></td>
+          </tr>
+        `;
+      });
+
+      html += `
+            </tbody>
+          </table>
+          <div class="cart-total">Total: $${totalCartPrice.toLocaleString()}</div>
+        </section>
+      `;
+
+      mainContent.innerHTML = html;
+    }
+
+    // New function to render the Contact Us page
+    function renderContactUs() {
+        mainContent.innerHTML = `
+            <section class="contact-us-section">
+                <h3>Contact Us</h3>
+                <form class="contact-form" onsubmit="event.preventDefault(); handleSubmitContactForm(this);">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <h4>Our Details:</h4>
+                <table class="contact-info-table">
+                    <thead>
+                        <tr>
+                            <th>Information</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Address</td>
+                            <td>Tom Mboya St,Nairobi city, CA 90210</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>+254 741424344</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>pimpedwhips@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Working Hours</td>
+                            <td>Mon-Fri: 8:00 AM - 4:00 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        `;
+    }
+
+    // Placeholder function for contact form submission
+    function handleSubmitContactForm(form) {
+        // In a real application, you would send this data to a server
+        // For now, we'll just show a confirmation message
+        const name = form.elements['name'].value;
+        const email = form.elements['email'].value;
+        const subject = form.elements['subject'].value;
+        const message = form.elements['message'].value;
+
+        console.log("Contact Form Submitted:");
+        console.log(`Name: ${name}`);
+        console.log(`Email: ${email}`);
+        console.log(`Subject: ${subject}`);
+        console.log(`Message: ${message}`);
+
+        showCustomMessage("Thank you for your message! We will get back to you soon.");
+        form.reset(); // Clear the form after submission
+    }
+
+    // Custom "alert" replacement
+    function showCustomMessage(message) {
+        const messageBox = document.createElement('div');
+        messageBox.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #34495e;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        `;
+        messageBox.textContent = message;
+        document.body.appendChild(messageBox);
+
+        // Fade in
+        setTimeout(() => {
+            messageBox.style.opacity = 1;
+        }, 50);
+
+        // Fade out and remove after a delay
+        setTimeout(() => {
+            messageBox.style.opacity = 0;
+            messageBox.addEventListener('transitionend', () => messageBox.remove());
+        }, 2000); // Display for 2 seconds
+    }
+
+
+    function addToCart(carId) {
+      const qtyInput = document.getElementById(`qty-${carId}`);
+      const quantity = parseInt(qtyInput.value);
+      
+      if (isNaN(quantity) || quantity < 1) {
+        showCustomMessage("Please enter a valid quantity (at least 1).");
+        return;
+      }
+
+      const existingIndex = cart.findIndex(item => item.carId === carId);
+      if (existingIndex >= 0) {
+        // Update quantity if already in cart
+        cart[existingIndex].quantity += quantity;
+      } else {
+        cart.push({ carId, quantity });
+      }
+      
+      showCustomMessage("Added to cart!"); // Using custom message
+    }
+
+    function removeFromCart(carId) {
+      cart = cart.filter(item => item.carId !== carId);
+      showCustomMessage("Item removed from cart!"); // Using custom message
+      renderCart(); // Re-render cart after removal
+    }
+
+    // Navigation button event listeners
+    navHome.addEventListener('click', (e) => {
+      e.preventDefault();
+      renderHome();
+    });
+
+    navRides.addEventListener('click', (e) => {
+      e.preventDefault();
+      renderCategories();
+    });
+
+    navCart.addEventListener('click', (e) => {
+      e.preventDefault();
+      renderCart();
+    });
+
+    // New event listener for Contact Us
+    navContact.addEventListener('click', (e) => {
+      e.preventDefault();
+      renderContactUs();
+    });
+
+    // Initialize page with Home
+    renderHome();
+
+  </script>
+
+</body>
+</html>
